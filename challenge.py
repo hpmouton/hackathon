@@ -1,7 +1,6 @@
 import streamlit as st
 import pandas as pd
 import datetime 
-from plotly import graph_objs as px
 
 st.write(""" # IndabaX Hackathon 2021 """)
 st.write(""" ## Team Innate """)
@@ -24,8 +23,5 @@ st.write(ex_users_df.head(20))
 n_years = st.slider('Years of prediction:', 1, 4)
 period = n_years * 365
 
-numOfNewUsers = len(new_users_df)
-numOfExpiredUsers = len(ex_users_df)
 
-chart_data = pd.DataFrame(new_users_df)
-st.line_chart(chart_data)
+st.altair_chart(ex_users_df)
