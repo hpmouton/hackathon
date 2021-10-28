@@ -1,7 +1,7 @@
 import streamlit as st
 import pandas as pd
 import datetime 
-import plotly as px
+from plotly import graph_objs as px
 
 st.write(""" # IndabaX Hackathon 2021 """)
 st.write(""" ## Team Innate """)
@@ -27,7 +27,7 @@ period = n_years * 365
 def plot_raw_data():
     fig = px.Figure()
     fig.add_trace(px.Scatter(x=new_users_df['DATE'], y=new_users_df['SDP_STATUS'], name="New Users This Year"))
-    fig.add_trace(px.Scatter(x=new_users_df['DATE'], y=new_users_df['SDP_STATUS'], name="New Users This Year"))
+    fig.add_trace(px.Scatter(x=new_users_df['DATE'], y=new_users_df['SDP_STATUS'], name="Expired Users This Year"))
 
     fig.layout.update(title_text='Time Series data with Rangeslider', xaxis_rangeslider_visible=True)
     st.plotly_chart(fig)
