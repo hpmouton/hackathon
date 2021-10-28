@@ -12,7 +12,7 @@ st.title("Sample Data")
 st.write(sorted_data.head(20))
 #Dataframe for Installed_Preactive SDP_Status
 status = "INSTALLED_PREACTIVE"
-new_users_df = df[df['SDP_STATUS'].isin(status)] 
+new_users_df = df[df['SDP_STATUS'].str.contains(status)] 
 st.title("New User Data")
 st.write(new_users_df.head(20))
 
