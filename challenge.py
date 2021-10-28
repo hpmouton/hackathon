@@ -1,6 +1,7 @@
 import streamlit as st
 import pandas as pd
 import datetime 
+import plotly as px
 
 
 st.write(""" # IndabaX Hackathon 2021 """)
@@ -18,4 +19,12 @@ st.write(new_users_df.head(20))
 
 n_years = st.slider('Years of prediction:', 1, 4)
 period = n_years * 365
+
+def plot_raw_data():
+    fig = px.Figure()
+    fig.add_trace(px.Scatter(x=new_users_df['DATE'], y=new_users_df['SDP_STATUS'], name="New Users This Year"))
+    fig.layout.update(title_text='Time Series data with Rangeslider', xaxis_rangeslider_visible=True)
+    st.plotly_chart(fig)
+    
+plot_raw_data()
 
