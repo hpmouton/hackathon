@@ -24,13 +24,8 @@ st.write(ex_users_df.head(20))
 n_years = st.slider('Years of prediction:', 1, 4)
 period = n_years * 365
 
-def plot_raw_data():
-    fig = px.Figure()
-    fig.add_trace(px.Scatter(x=new_users_df['DATE'], y=new_users_df['SDP_STATUS'], name="New Users This Year"))
-    fig.add_trace(px.Scatter(x=new_users_df['DATE'], y=new_users_df['SDP_STATUS'], name="Expired Users This Year"))
+numOfNewUsers = len(new_users_df)
+numOfExpiredUsers = len(ex_users_df)
 
-    fig.layout.update(title_text='Time Series data with Rangeslider', xaxis_rangeslider_visible=True)
-    st.plotly_chart(fig)
-    
-plot_raw_data()
-
+chart_data = pd.DataFrame(new_users_df)
+st.line_chart(chart_data)
