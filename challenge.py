@@ -1,7 +1,7 @@
 import streamlit as st
 import pandas as pd
 import datetime 
-from plotly import graph_objs as px
+import plotly as px
 
 st.write(""" # IndabaX Hackathon 2021 """)
 st.write(""" ## Team Innate """)
