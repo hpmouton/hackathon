@@ -1,8 +1,13 @@
 import streamlit as st
 import pandas as pd
 import datetime 
+from PIL import Image
 
+mtc_logo = Image.open("./images/logo2.png")
+nust_logo = Image.open("./images/home.png")
 
+st.image(mtc_logo)
+st.image(nust_logo)
 st.write(""" # IndabaX Hackathon 2021 """)
 st.write(""" ## Team Innate """)
 
