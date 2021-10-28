@@ -10,4 +10,4 @@ df = pd.read_csv("./dataset.csv")
 sorted_data = df.sort_values('DATE',ascending=True)
 st.title("Sample Data")
 
-st.write(sorted_data.head())
+st.write(sorted_data.head(20))
