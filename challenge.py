@@ -26,6 +26,6 @@ st.write(ex_users_df.head(20))
 n_years = st.slider('Years of prediction:', 1, 4)
 period = n_years * 365
 
-c = alt.Chart(new_users_df).mark_circle().encode(x='DATE', y='SDP_STATUS')
+c = alt.Chart(new_users_df).mark_line().encode(x='DATE', y='SDP_STATUS')
 
 st.altair_chart(c, use_container_width=True)
