@@ -6,4 +6,4 @@ st.write(""" # IndabaX Hackathon 2021 """)
 df = pd.read_csv("./dataset.csv")
 st.title("Hello world!")
 
-st.write(df)
+st.write(df.head())
