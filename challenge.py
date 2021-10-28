@@ -7,4 +7,4 @@ df = pd.read_csv("./dataset.csv")
 st.title("Hello world!")
 data = st.dataframe(df)
 
-st.table(data,5)
+st.table(data.head())
